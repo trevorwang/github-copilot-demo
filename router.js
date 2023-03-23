@@ -16,8 +16,8 @@ const user = require('./user');
 
 // use home router
 router.use('/', home.routes(), home.allowedMethods());
-// // use user router
-// router.use('/user', user.routes(), user.allowedMethods());
+// use user router
+router.use('/user', user.routes(), user.allowedMethods());
 // // use auth router
 // router.use('/auth', auth.routes(), auth.allowedMethods());
 
