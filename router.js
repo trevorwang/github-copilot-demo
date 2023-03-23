@@ -9,8 +9,8 @@ const router = new Router();
 
 // import home router from home.js
 const home = require('./home');
-// // import user router from user.js
-// const user = require('./user');
+// import user router from user.js
+const user = require('./user');
 // // import auth router from auth.js
 // const auth = require('./auth');
 

@@ -20,6 +20,18 @@ const logger = require('./logger');
 app.use(router.routes());
 app.use(router.allowedMethods());
 
+// integrate with db and set to ctx.db
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectId;
+MongoClient.connect(config.db.url, (err, db) => {
+	if (err) {
+		logger.error('Error connecting to database');
+		throw err;
+	}
+	logger.info('Connected to database');
+	app.context.db = db;
+	app.context.ObjectId = ObjectId;
+});
 
 
 app.listen(config.port, () => {
