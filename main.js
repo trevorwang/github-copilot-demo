@@ -19,6 +19,12 @@ const logger = require('./logger');
 const koaLogger = require('koa-logger');
 app.use(koaLogger());
 
+
+// use koa-bodyparser
+const bodyParser = require('koa-bodyparser');
+app.use(bodyParser());
+
+
 // inject logger into koa context
 app.context.logger = logger;
 
